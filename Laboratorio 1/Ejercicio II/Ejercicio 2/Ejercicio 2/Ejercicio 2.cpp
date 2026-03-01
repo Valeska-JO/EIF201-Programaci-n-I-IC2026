@@ -2,8 +2,6 @@
 #include "Invertido.h"
 #include <iostream>
 #include<array>
-
-
 int main()
 {
     std::array<int, 20> numero;
