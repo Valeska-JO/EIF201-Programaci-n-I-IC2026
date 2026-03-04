@@ -14,6 +14,7 @@ int main()
             std::cin >> matriz[filas][cols];
 		}
     }
+    imprimirMatriz(matriz);
     std::cout << std::endl;
     std::cout << " Suma de filas: \n";
     sumaFila(matriz);

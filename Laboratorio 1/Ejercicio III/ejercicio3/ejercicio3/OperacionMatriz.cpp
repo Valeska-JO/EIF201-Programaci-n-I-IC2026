@@ -2,6 +2,15 @@
 #include <iostream>
 #include <iomanip>
 #include <array>
+void imprimirMatriz(const std::array<std::array<int, 3>, 3>& matriz) {
+	for (int i = 0; i < 3; i++) {
+		int suma = 0;
+		for (int j = 0; j < 3; j++) {
+			std::cout << std::setw(6) << matriz[i][j];
+		}
+		std::cout << std::endl << "\n";
+	}
+}
 void sumaFila(const std::array<std::array<int, 3>, 3>& matriz){
 	for (int i = 0; i < 3; i++) {
 		int suma = 0;
@@ -12,7 +21,6 @@ void sumaFila(const std::array<std::array<int, 3>, 3>& matriz){
 		std::cout << "La fila " << i << " la suma es: " << std::setw(6) << suma << "\n";
 	}
 }
-
 
 void sumaColumna(const std::array<std::array<int, 3>, 3>& matriz) {
 	for (int j = 0; j < 3; j++) {
