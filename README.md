@@ -13,3 +13,4 @@ Contiene laboratorios, ejercicios de practica y el proyecto del curso
 
 ## Estructura del repositorio
 - /sesion02 - Git, Arreglos, Matrices y Cadenas
+- /sesion03 - punteros
