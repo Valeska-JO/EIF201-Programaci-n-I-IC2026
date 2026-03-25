@@ -21,9 +21,15 @@
     <ClCompile Include="vehiculo.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
+    <ClCompile Include="flota.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="vehiculo.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="flota.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>
