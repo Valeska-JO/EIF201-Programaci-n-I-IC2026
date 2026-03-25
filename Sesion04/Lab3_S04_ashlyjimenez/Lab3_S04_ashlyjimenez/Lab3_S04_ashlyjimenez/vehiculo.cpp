@@ -5,6 +5,7 @@ vehiculo::vehiculo(std::string p, std::string m, int a, double k) : placa(p), ye
 std::string vehiculo::getPlaca() const { return placa;}
 std::string vehiculo::getMarca() const { return marca;}
 bool vehiculo::isActivo() const { return activo;}
+
 void vehiculo::registrarKilometros(double km) {
 	if (activo && km > 0) {
 		kilometraje += km;
@@ -14,16 +15,20 @@ void vehiculo::registrarKilometros(double km) {
 	}
 }
 void vehiculo::desactivar() {
-	if (!activo) std::cout << "Ya esta fuera de servicio." << std::endl;
-	else activo = false;
+	if (!activo){ std::cout << "Ya esta fuera de servicio." << std::endl;
+}
+	else { activo = false;}
 }
 void vehiculo::reactivar() {
-	if (activo) std::cout << "Ya esta activo." << std::endl;
-	else activo = true;
+	if (activo) {
+		std::cout << "Ya esta activo." << std::endl;
+	}
+	else {activo = true;
+	}
 }
 
 void vehiculo::mostrar()const {
-	std::cout << "[" << placa << "]" << marca << "(" << year << ") - KM: " << kilometraje << " - Estado: " << (activo? "ACTIVO" : "FUERA DE SERVICIO") << std::endl;
+	std::cout << "[" << placa << "]" << marca << "(" << year << ") - KM: " << kilometraje << " - Estado: " << activo << "ACTIVO" << "FUERA DE SERVICIO" << std::endl;
 }
 
 }

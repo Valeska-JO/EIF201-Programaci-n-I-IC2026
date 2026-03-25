@@ -1,5 +1,9 @@
 #include "flota.h"
+#include <string>
+#include <iostream>
+
 namespace UNA {
+
 	flota::flota() : cantidad(0), capacidad(3) {
 		lista = new vehiculo * [capacidad];
 	}
@@ -9,6 +13,9 @@ namespace UNA {
 			delete[] lista;
 		}
 	}
+    
+
+
 	void flota::redimensionar() {
 		capacidad *= 2;
 		vehiculo** nuevaLista = new vehiculo * [capacidad];
@@ -18,6 +25,12 @@ namespace UNA {
 		delete[] lista;
 		lista = nuevaLista;
 	}
+    void flota::agregar(vehiculo* nuevo) {
+        if (cantidad >= capacidad) {
+            redimensionar();
+        }
+        lista[cantidad++] = nuevo;
+    }
 	bool flota::eliminar(std::string placa) {
 	for (int i = 0; i < cantidad; i++) {
 		if (lista[i]->getPlaca() == placa) {
@@ -51,10 +64,10 @@ namespace UNA {
         }
 
         if (encontrados > 0) {
-            std::cout << "Se encontraron " << encontrados << " vehiculos de la marca " << marca << "." << std::endl; [cite:42, 46];
+            std::cout << "Se encontraron " << encontrados << " vehiculos de la marca " << marca << "." << std::endl;
         }
         else {
-            std::cout << "No hay vehiculos registrados de la marca: " << marca << "." << std::endl; [cite:46, 47];
+            std::cout << "No hay vehiculos registrados de la marca: " << marca << "." << std::endl;
         }
     }
     int flota::contarActivos() const {
@@ -64,17 +77,16 @@ namespace UNA {
                 activos++;
             }
         }
-        return activos; [cite:50];
+        return activos;
     }
     void flota::mostrarTodos() const {
         if (cantidad == 0) {
-            std::cout << "La flota se encuentra vacia actualmente." << std::endl; 
-            [cite:51];
+            std::cout << "La flota se encuentra vacia actualmente." << std::endl;
         }
 
         std::cout << "--- Listado de Flota Completa ---" << std::endl;
         for (int i = 0; i < cantidad; i++) {
-            lista[i]->mostrar(); [cite:51];
+            lista[i]->mostrar(); 
         }
     }
 

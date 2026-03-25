@@ -6,20 +6,20 @@
 
 using namespace std;
 using namespace UNA;
-using std::cout;
+
 void mostrarMenu() {
-    cout << "\n--- FlotaExpress: Registro de Vehiculos ---" << endl;
-    cout << "1. Registrar vehiculo" << endl;
-    cout << "2. Buscar vehiculo por placa" << endl;
-    cout << "3. Mostrar vehiculos por marca" << endl;
-    cout << "4. Registrar kilometros a un vehiculo" << endl;
-    cout << "5. Desactivar vehiculo (fuera de servicio)" << endl;
-    cout << "6. Reactivar vehiculo" << endl;
-    cout << "7. Eliminar vehiculo (dar de baja definitiva)" << endl;
-    cout << "8. Mostrar flota completa" << endl;
-    cout << "9. Mostrar cantidad de vehiculos activos" << endl;
-    cout << "10. Salir" << endl;
-    cout << "Seleccione una opcion: ";
+    std::cout << "\n--- FlotaExpress: Registro de Vehiculos ---" << endl;
+    std::cout << "1. Registrar vehiculo" << endl;
+    std::cout << "2. Buscar vehiculo por placa" << endl;
+    std::cout << "3. Mostrar vehiculos por marca" << endl;
+    std::cout << "4. Registrar kilometros a un vehiculo" << endl;
+    std::cout << "5. Desactivar vehiculo (fuera de servicio)" << endl;
+    std::cout << "6. Reactivar vehiculo" << endl;
+    std::cout << "7. Eliminar vehiculo (dar de baja definitiva)" << endl;
+    std::cout << "8. Mostrar flota completa" << endl;
+    std::cout << "9. Mostrar cantidad de vehiculos activos" << endl;
+    std::cout << "10. Salir" << endl;
+    std::cout << "Seleccione una opcion: ";
 }
 
 int main() {
@@ -43,7 +43,9 @@ int main() {
             std::cin >> year;
             std::cout << "Kilometraje inicial: "; 
             std::cin >> km;
-            miFlota.agregar(new vehiculo(placa, marca, year, km));
+            vehiculo* v = new vehiculo(placa, marca, year, km);
+            miFlota.agregar(v);
+         
             std::cout << "Vehiculo registrado con exito." << endl;
             break;
         }
